@@ -18,6 +18,7 @@ for title in name:
 
 #Find another thing on the page using css selectors
 address = root.cssselect('dd')
+for companyaddress in address:
   print companyaddress.text
 
 
