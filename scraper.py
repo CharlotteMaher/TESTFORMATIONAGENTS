@@ -2,6 +2,7 @@
 # including some code snippets below that you should find helpful
 
 import scraperwiki
+#converts html
 import lxml.html
 #
 
@@ -10,7 +11,7 @@ html = scraperwiki.scrape("https://beta.companieshouse.gov.uk/company/04503188")
 #
 # # Turn html into a string and put into a variable root
 root = lxml.html.fromstring(html)
-#Find something on the page to using css selectors
+#Find something on the page to using css selectors and put in variables (name is one)
 name = root.cssselect('title')
 #for has to match text
 for companyname in name: 
@@ -22,16 +23,16 @@ for companyname in name:
 #  record = { "companylist" : companylist.text } # column name and value
  # scraperwiki.sqlite.save(["companylist"], record)
 
-    #Find info on index
+    #Find info on index- in this case it is the type of info- ie. the registered address
 info = root.cssselect('dt')
 for companyinfo in info:
  print companyinfo.text
 #write out in ordered table
- record = { "companyinfo" : companyinfo.text } # column name and value
+ record = { "companyinfo" : companyinfo.text } # column name/unique key and value
  scraperwiki.sqlite.save(["companyinfo"], record) # save the records one by one
 
 
-#Find another thing on the page using css selectors
+#Find another thing on the page using css selectors in this case the actual address. 
 address = root.cssselect('dd')
 for companyaddress in address:
   print companyaddress.text
