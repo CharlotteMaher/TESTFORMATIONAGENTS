@@ -16,7 +16,7 @@ name = root.cssselect('title')
 for companyname in name: 
   print companyname.text
 
- #Gettomg the descriptive list
+ #Getting the descriptive list
 list = root.cssselect('dl')
   print companylist.text
   record = { "companylist" : companylist.text } # column name and value
