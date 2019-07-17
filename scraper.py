@@ -28,7 +28,9 @@ for companyinfo in info:
 #Find another thing on the page using css selectors
 address = root.cssselect('dd')
 for companyaddress in address:
-  print companyaddress.text
+  #print companyaddress.text
+  record = { "companyaddress" : companyaddress.text } # column name and value
+  scraperwiki.sqlite.save(["companyaddress"], record) # save the records one by one
 
 
 # # Write out to the sqlite database using scraperwiki library
