@@ -26,7 +26,7 @@ for companyname in name:
 info = root.cssselect('dt')
 for companyinfo in info:
  print companyinfo.text
-write out in ordered table
+#write out in ordered table
  record = { "companyinfo" : companyinfo.text } # column name and value
  scraperwiki.sqlite.save(["companyinfo"], record) # save the records one by one
 
