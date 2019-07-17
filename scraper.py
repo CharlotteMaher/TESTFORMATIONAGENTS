@@ -19,8 +19,8 @@ for companyname in name:
  #Gettomg the descriptive list
 list = root.cssselect('dl')
   print companylist.text
-    record = { "companylist" : companylist.text } # column name and value
-    scraperwiki.sqlite.save(["companylist"], record)
+  record = { "companylist" : companylist.text } # column name and value
+  scraperwiki.sqlite.save(["companylist"], record)
 
     #Find info on index
 #info = root.cssselect('dt')
