@@ -16,8 +16,13 @@ name = root.cssselect('title')
 for companyname in name: 
   print companyname.text
 
+#Find info on index
+info = root.cssselect('dt')
+for companyinfo in info:
+  print companyinfo.text
+
 #Find another thing on the page using css selectors
-address = root.cssselect('dd'[0])
+address = root.cssselect('dd')
 for companyaddress in address:
   print companyaddress.text
 
