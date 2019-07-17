@@ -19,18 +19,18 @@ for companyname in name:
 #Find info on index
 info = root.cssselect('dt')
 for companyinfo in info:
-  print companyinfo.text
+ #print companyinfo.text
+#write out in ordered table
+  record = { "companyinfo" : companyinfo.text } # column name and value
+  scraperwiki.sqlite.save(["companyinfo"], record) # save the records one by one
 
+#
 #Find another thing on the page using css selectors
 address = root.cssselect('dd')
 for companyaddress in address:
   print companyaddress.text
 
-#write out in ordered table
-record = { "companyinfo" : companyinfo.text } # column name and value
-    scraperwiki.sqlite.save(["companyinfo"], record) # save the records one by one
 
-#
 # # Write out to the sqlite database using scraperwiki library
 #scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
