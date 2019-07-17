@@ -31,7 +31,7 @@ write out in ordered table
  scraperwiki.sqlite.save(["companyinfo"], record) # save the records one by one
 
 
-Find another thing on the page using css selectors
+#Find another thing on the page using css selectors
 address = root.cssselect('dd')
 for companyaddress in address:
   print companyaddress.text
